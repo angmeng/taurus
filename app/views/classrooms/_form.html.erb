@@ -25,6 +25,11 @@
     <%= form.label :branch_id %>
     <%= form.text_field :branch_id, value: session[:licensee_branch_id] %>
   </div>
+  
+  <div class="field">
+    <%= form.label :teacher_id %>
+    <%= form.select :teacher_id, Teacher.all.map {|teacher| [teacher.name, teacher.id] }, { include_blank: "Please select your teacher name" } %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>

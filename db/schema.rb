@@ -33,8 +33,10 @@ ActiveRecord::Schema.define(version: 2018_12_08_072818) do
     t.string "name"
     t.string "branch"
     t.string "branch_id"
+    t.bigint "teacher_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["teacher_id"], name: "index_classrooms_on_teacher_id"
   end
 
   create_table "licensees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -60,5 +62,6 @@ ActiveRecord::Schema.define(version: 2018_12_08_072818) do
     t.string "branch_id"
   end
 
+  add_foreign_key "classrooms", "teachers"
   add_foreign_key "licensees", "branches"
 end

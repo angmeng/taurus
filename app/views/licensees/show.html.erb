@@ -25,5 +25,10 @@
   <%= @licensee.branch.id %>
 </p>
 
+<p>
+  <strong>Teacher:</strong>
+  <%= @licensee.teacher.name %>
+</p>
+
 <%= link_to 'Edit', edit_licensee_path(@licensee) %> |
 <%= link_to 'Back', licensees_path %>
