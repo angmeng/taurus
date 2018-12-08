@@ -1,29 +1,32 @@
-<p id="notice"><%= notice %></p>
+<div class="center-align">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @licensee.name %>
-</p>
+  <p>
+    <strong>Name:</strong>
+    <%= @licensee.name %>
+  </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @licensee.email %>
-</p>
+  <p>
+    <strong>Email:</strong>
+    <%= @licensee.email %>
+  </p>
 
-<p>
-  <strong>Password:</strong>
-  <%= @licensee.password %>
-</p>
+  <p>
+    <strong>Password:</strong>
+    <%= @licensee.password %>
+  </p>
 
-<p>
-  <strong>Branch:</strong>
-  <%= @licensee.branch.name %>
-</p>
+  <p>
+    <strong>Branch:</strong>
+    <%= @licensee.branch.name %>
+  </p>
 
-<p>
-  <strong>ranch ID:</strong>
-  <%= @licensee.branch.id %>
-</p>
+  <p>
+    <strong>Branch ID:</strong>
+    <%= @licensee.branch.id %>
+  </p>
 
-<%= link_to 'Edit', edit_licensee_path(@licensee) %> |
-<%= link_to 'Back', licensees_path %>
+  <%= link_to 'Edit', edit_licensee_path(@licensee) %> |
+  <%= link_to 'Back', licensees_path %>
+
+</div>
