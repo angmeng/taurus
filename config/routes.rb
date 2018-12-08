@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'main_page/index'
+  post 'login', to: "login#create"
+  get 'login', to: "login#new"
+  delete "logout", to: "login#destroy"
   resources :classrooms
   resources :teachers
 
