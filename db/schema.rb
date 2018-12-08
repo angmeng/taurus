@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_08_070800) do
-
+ActiveRecord::Schema.define(version: 2018_12_08_072818) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -26,6 +25,14 @@ ActiveRecord::Schema.define(version: 2018_12_08_070800) do
     t.string "address", null: false
     t.string "pastcode", null: false
     t.string "phone", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "classrooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "branch"
+    t.string "branch_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -49,6 +56,9 @@ ActiveRecord::Schema.define(version: 2018_12_08_070800) do
     t.string "password", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "branch"
+    t.string "branch_id"
   end
+
   add_foreign_key "licensees", "branches"
 end
