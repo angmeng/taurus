@@ -40,6 +40,16 @@
     <%= form.label :password %>
     <%= form.text_field :password %>
   </div>
+  
+  <div class="field">
+    <%= form.label :branch %>
+    <%= form.text_field :branch, value: session[:licensee_branch_name] %>
+  </div>
+
+  <div class="field">
+    <%= form.label :branch_id %>
+    <%= form.text_field :branch_id, value: session[:licensee_branch_id] %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>
