@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2018_12_08_070800) do
 
+
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", null: false
@@ -49,6 +50,5 @@ ActiveRecord::Schema.define(version: 2018_12_08_070800) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
   add_foreign_key "licensees", "branches"
 end
