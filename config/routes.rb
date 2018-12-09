@@ -18,7 +18,12 @@ Rails.application.routes.draw do
   get 'parent/login', to: "login#parent_login"
   delete "parent/logout", to: "login#destroy_parent_session"
   
-  resources :main_page, only: [ :index ]
+  resources :main_page, only: [ :index ] do
+    collection do
+      get "bulletin_page"
+      
+    end
+  end
   
   resources :classrooms
   resources :teachers
