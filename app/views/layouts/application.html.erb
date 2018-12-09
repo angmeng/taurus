@@ -25,7 +25,7 @@
   </style>
 
   <body>
-    <div id="demo" class="carousel slide" data-ride="carousel">
+    <div id="demo" class="carousel slide" data-ride="carousel" style="background-color:black">
       <ul class="carousel-indicators">
         <li data-target="#demo" data-slide-to="0" class="active"></li>
         <li data-target="#demo" data-slide-to="1"></li>
@@ -70,15 +70,14 @@
         </li>
       </ul>
       
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-          <%= link_to "Login", parent_login_path %>
-        </li>
-        <% if session[:parents_id].present? %>
-          <li>
-            <%= link_to "logout", "/parent/logout", data: { method: :delete } %>
-          </li>
-        <% end %>
+      <form class="form-inline ml-auto">
+          <% if session[:parent_id].present? %>
+            <h4 class="text-white-50 bg-dark">Welcome, <%= session[:parent_name] %></h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <h4><%= link_to "Logout", "parent/logout", data: { method: :delete } %></h4>
+          <% else %>
+            <h4><%= link_to "Login", "parent/login" %></h4>
+          <% end %>
+        </form>
     </nav>
     
     <div class="row">

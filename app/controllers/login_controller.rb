@@ -1,5 +1,6 @@
 class LoginController < ApplicationController
-   def new
+  layout "login"
+  def new
   end 
   
   def create
