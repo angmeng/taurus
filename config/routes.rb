@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :students
   resources :photo_galleries
   resources :bulletins
-  get 'main_page/index'
+  
   post 'login', to: "login#create"
   get 'login', to: "login#new"
   delete "logout", to: "login#destroy"
@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   post 'parent/login', to: "login#create_parent_session"
   get 'parent/login', to: "login#parent_login"
   delete "parent/logout", to: "login#destroy_parent_session"
+  
+  resources :main_page, only: [ :index ]
   
   resources :classrooms
   resources :teachers

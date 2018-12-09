@@ -86,13 +86,13 @@ class LoginController < ApplicationController
       redirect_to main_page_index_path
     else
       flash[:alert] = "Email and passwords is incorrect"
-      redirect_to action: :parent_login
+      redirect_to parent_login_path
     end
   end
 
   def destroy_parent_session
     session[:parent_id] = nil
     flash[:notice] = "You are signed out successfully"
-    redirect_to action: :parent_login
+    redirect_to parent_login_path
   end
 end
