@@ -11,7 +11,7 @@ class LoginController < ApplicationController
       session[:licensee_name] = licensee.name
       session[:licensee_branch_id] = licensee.branch.id
       session[:licensee_branch_name] = licensee.branch.name
-      redirect_to main_page_index_path
+      redirect_to login_path
     else
       flash[:alert] = "Email and password is incorrect"
       redirect_to action: :new
@@ -80,7 +80,9 @@ class LoginController < ApplicationController
     if parent.present?
       flash[:notice] = "You are signed in as parent successfully"
       session[:parent_id] = parent.id
-      redirect_to parent_path
+      session[:parent_name] = parent.name
+      session[:parent_student_id] = parent.student_id
+      redirect_to main_page_index_path
     else
       flash[:alert] = "Email and passwords is incorrect"
       redirect_to action: :parent_login

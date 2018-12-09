@@ -1,3 +1,23 @@
-<h1>MainPage#index</h1>
-<p>Find me in app/views/main_page/index.html.erb</p>
-<h4><%= link_to "Logout", "/logout", data: { method: :delete } %></h4>
+<h1>welcome to kindergarten</h1>
+
+hi, <%= session[:parent_name] %>
+
+<%= session[:parent_student_id] %>
+  
+  
+<table class="table table-striped">
+         <tr>
+           <th style="width:70%">Name</th>
+           <th style="width:20%">Age</th>
+         </tr>
+         
+         <% @students.each do |student| %>
+           <% if student.id == session[:parent_student_id] %>
+             <tr>
+               <td><%= student.name %></td>
+               <td><%= student.age %></td>
+             </tr>
+           <% end %>
+         <% end %>
+        
+       </table>
