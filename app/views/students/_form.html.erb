@@ -1,45 +1,51 @@
-<%= form_with(model: student, local: true) do |form| %>
-  <% if student.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(student.errors.count, "error") %> prohibited this student from being saved:</h2>
+<div class="row">
+  <%= form_with(model: student, local: true) do |form| %>
+    <% if student.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(student.errors.count, "error") %> prohibited this student from being saved:</h2>
 
-      <ul>
-      <% student.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% student.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+</div>
+
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-8">
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+    <div class="field">
+      <%= form.label :address %>
+      <%= form.text_field :address %>
+    </div>
 
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address %>
-  </div>
+    <div class="field">
+      <%= form.label :gender %>
+      <%= form.text_field :gender %>
+    </div>
 
-  <div class="field">
-    <%= form.label :gender %>
-    <%= form.text_field :gender %>
-  </div>
+    <div class="field">
+      <%= form.label :age %>
+      <%= form.text_field :age %>
+    </div>
 
-  <div class="field">
-    <%= form.label :age %>
-    <%= form.text_field :age %>
-  </div>
+    <div class="field">
+      <%= form.label :weight %>
+      <%= form.text_field :weight %>
+    </div>
 
-  <div class="field">
-    <%= form.label :weight %>
-    <%= form.text_field :weight %>
-  </div>
-
-  <div class="field">
-    <%= form.label :height %>
-    <%= form.text_field :height %>
-  </div>
+    <div class="field">
+      <%= form.label :height %>
+      <%= form.text_field :height %>
+    </div>
+  
   
   <!--<div class="field">-->
   <!--  <%#= form.label :branch %>-->
@@ -56,37 +62,40 @@
   <!--  <%#= form.text_field :teacher_id %>-->
   <!--</div>-->
 
-  <div class="field">
-    <%= form.label :english %>
-    <%= form.text_field :english %>
-  </div>
+    <div class="field">
+      <%= form.label :english %>
+      <%= form.text_field :english %>
+    </div>
 
-  <div class="field">
-    <%= form.label :malay %>
-    <%= form.text_field :malay %>
-  </div>
+    <div class="field">
+      <%= form.label :malay %>
+      <%= form.text_field :malay %>
+    </div>
 
-  <div class="field">
-    <%= form.label :chinese %>
-    <%= form.text_field :chinese %>
-  </div>
+    <div class="field">
+      <%= form.label :chinese %>
+      <%= form.text_field :chinese %>
+    </div>
 
-  <div class="field">
-    <%= form.label :mathematic %>
-    <%= form.text_field :mathematic %>
-  </div>
+    <div class="field">
+      <%= form.label :mathematic %>
+      <%= form.text_field :mathematic %>
+    </div>
 
-  <div class="field">
-    <%= form.label :conduct %>
-    <%= form.text_field :conduct %>
-  </div>
+    <div class="field">
+      <%= form.label :conduct %>
+      <%= form.text_field :conduct %>
+    </div>
 
-  <div class="field">
-    <%= form.label :comment %>
-    <%= form.text_field :comment %>
-  </div>
+    <div class="field">
+      <%= form.label :comment %>
+      <%= form.text_field :comment %>
+    </div>
 
-  <div class="actions">
-    <%= form.submit %>
+    <div class="actions">
+      <%= form.submit %>
+    </div>
   </div>
-<% end %>
+  <div class="col-sm-2"></div>
+  <% end %>
+</div>

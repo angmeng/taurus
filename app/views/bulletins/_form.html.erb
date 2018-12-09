@@ -1,32 +1,41 @@
-<%= form_with(model: bulletin, local: true) do |form| %>
-  <% if bulletin.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(bulletin.errors.count, "error") %> prohibited this bulletin from being saved:</h2>
+<div class="row">
+  <%= form_with(model: bulletin, local: true) do |form| %>
+    <% if bulletin.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(bulletin.errors.count, "error") %> prohibited this bulletin from being saved:</h2>
 
-      <ul>
-      <% bulletin.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% bulletin.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+</div>
+
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-8">
+    <div class="field">
+      <%= form.label :topic %>
+      <%= form.text_field :topic %>
     </div>
+
+    <div class="field">
+      <%= form.label :date %>
+      <%= form.text_field :date %>
+    </div>
+
+    <div class="field">
+      <%= form.label :content %>
+      <%= form.text_field :content %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  </div>
   <% end %>
+</div>
+  
 
-  <div class="field">
-    <%= form.label :topic %>
-    <%= form.text_field :topic %>
-  </div>
-
-  <div class="field">
-    <%= form.label :date %>
-    <%= form.text_field :date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_field :content %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
