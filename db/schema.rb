@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2018_12_09_054612) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -32,6 +33,7 @@ ActiveRecord::Schema.define(version: 2018_12_09_054612) do
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
+
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -76,9 +78,35 @@ ActiveRecord::Schema.define(version: 2018_12_09_054612) do
     t.index ["branch_id"], name: "index_licensees_on_branch_id"
   end
 
+
+  create_table "parents", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "password"
+    t.bigint "student_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["student_id"], name: "index_parents_on_student_id"
+  end
+
+  create_table "students", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "address", null: false
+    t.string "gender", null: false
+    t.string "age", null: false
+    t.string "weight", null: false
+    t.string "height", null: false
+    t.string "english", null: false
+    t.string "malay", null: false
+    t.string "chinese", null: false
+    t.string "mathematic", null: false
+    t.string "conduct", null: false
+    t.string "comment", null: false
+
   create_table "photo_galleries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "activity"
     t.text "description"
+
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -98,4 +126,5 @@ ActiveRecord::Schema.define(version: 2018_12_09_054612) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "licensees", "branches"
+  add_foreign_key "parents", "students"
 end
