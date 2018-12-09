@@ -1,37 +1,45 @@
-<%= form_with(model: parent, local: true) do |form| %>
-  <% if parent.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(parent.errors.count, "error") %> prohibited this parent from being saved:</h2>
+<div class="row">
+  <%= form_with(model: parent, local: true) do |form| %>
+    <% if parent.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(parent.errors.count, "error") %> prohibited this parent from being saved:</h2>
 
-      <ul>
-      <% parent.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% parent.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+       <% end %>
+        </ul>
+      </div>
+    <% end %>
+</div>
+
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-8">
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+    <div class="field">
+      <%= form.label :email %>
+      <%= form.text_field :email %>
+    </div>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.text_field :password %>
-  </div>
+    <div class="field">
+      <%= form.label :password %>
+      <%= form.text_field :password %>
+    </div>
   
-  <div class="field">
-    <%= form.label :student_id %>
-    <%= form.select :student_id, Student.all.map {|student| [student.name, student.id] }, { include_blank: "Please select your Children name" } %>
-  </div>
+    <div class="field">
+      <%= form.label :student_id %>
+      <%= form.select :student_id, Student.all.map {|student| [student.name, student.id] }, { include_blank: "Please select your Children name" } %>
+    </div>
 
-  <div class="actions">
-    <%= form.submit %>
+    <div class="actions">
+      <%= form.submit %>
+    </div>
   </div>
-<% end %>
+  <div class="col-sm-2"></div>
+  <% end %>
+</div>
