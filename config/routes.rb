@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :parents
+  resources :students
   resources :bulletins
   get 'main_page/index'
   post 'login', to: "login#create"
