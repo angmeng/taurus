@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Activity:</strong>
+  <%= @photo_gallery.activity %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @photo_gallery.description %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= image_tag @photo_gallery.image.variant(resize: "100x100") if@photo_gallery.image.attached? %>
+</p>
+
+<%= link_to 'Edit', edit_photo_gallery_path(@photo_gallery) %> |
+<%= link_to 'Back', photo_galleries_path %>

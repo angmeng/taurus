@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :photo_galleries
   resources :bulletins
   get 'main_page/index'
   post 'login', to: "login#create"
